@@ -4,9 +4,10 @@ public class Main {
     public static void main(String[] args) {
         isYearLeap(2020);
         downloadText(1, 2020);
-        deliveryRangeDistance(1012);
+        System.out.println("Потребуется дней: " + deliveryRangeDistance(1012));
 
     }
+
     // Задание 1 \\
     public static int isYearLeap(int year) {
 
@@ -17,6 +18,7 @@ public class Main {
         }
         return year;
     }
+
     // Задание 2 \\
     public static void downloadText(int clientOS, int clientDeviceYear) {
 
@@ -32,22 +34,18 @@ public class Main {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
     }
+
     // Задание 3 \\
-    public static void deliveryRangeDistance (int deliveryDistance){
+    public static int deliveryRangeDistance(int deliveryDistance) {
         int deliveryDays = 1;
         int differenceDays = 40;
         int startLimit = 20;
-        if ( deliveryDistance <= 20){
-            System.out.println("Потребуется дней:" + deliveryDays);
-        }
-        else if (deliveryDistance > 20 && deliveryDistance <=59){
+        if (deliveryDistance <= 20) {
+        } else if (deliveryDistance > 20 && deliveryDistance <= 59) {
             deliveryDays = deliveryDays + 1;
-            System.out.println("Потребуется дней:" + deliveryDays);
-        }
-        else if (deliveryDistance > 59){
+        } else if (deliveryDistance > 59) {
             deliveryDays = (deliveryDistance + startLimit) / differenceDays + 1;
-            System.out.println("Потребуется дней:" + deliveryDays);
         }
+        return deliveryDays;
     }
-
 }
